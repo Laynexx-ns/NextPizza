@@ -1,5 +1,6 @@
-import {Container, Filters, Title} from '@/components/shared'
+import {Container, Filters, Title, ProductCard, ProductsGroupList} from '@/components/shared'
 import {TopBar} from "@/components/shared/top-bar";
+
 
 
 export default function Home(){
@@ -19,7 +20,36 @@ export default function Home(){
                   </div>
                   {/*Список товаров*/}
                   <div className={'flex flex-col gap-16'}>
-                      Список товаров
+                      <ProductsGroupList title={'Пиццы'} items={[
+                          {
+                          id: 1,
+                          name: 'Чизбургер пицца',
+                          imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif',
+                          price: 550,
+                          items: [{price: 550}]
+                          },
+                          {
+                              id: 1,
+                              name: 'Чизбургер пицца',
+                              imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif',
+                              price: 550,
+                              items: [{price: 550}]
+                          },
+                          {
+                              id: 1,
+                              name: 'Чизбургер пицца',
+                              imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif',
+                              price: 550,
+                              items: [{price: 550}]
+                          },
+                          {
+                              id: 1,
+                              name: 'Чизбургер пицца',
+                              imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif',
+                              price: 550,
+                              items: [{price: 550}]
+                          },
+                          ]} categoryId={1}/>
                   </div>
               </div>
           </Container>
