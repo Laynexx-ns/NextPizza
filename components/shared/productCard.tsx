@@ -20,13 +20,17 @@ export const ProductCard: React.FC<Props> = ({className, id, name, price, imageU
                     <img className={'w-[215px] h-[215px]'} src={imageUrl} alt={name}/>
                 </div>
 
+                <div className={'sticky flex-auto '}>
+
+                </div>
+
                 <Title text={name} size={'sm'} className={'mb-1 mt-3 font-bold'}/>
 
                 <p className={'text-sm text-gray-400'}>
                     Цыпленок, моцарелла, сыры чеддер и пармезан, сырный соус, томаты, сосус альфредо
                 </p>
 
-                <div className={'flex items-center justify-center gap-4'}>
+                <div className={'flex items-center justify-center mt-4'}>
                     <span className={'text-[20px]'}>
                         от <b>{price} ₽</b>
                     </span>
