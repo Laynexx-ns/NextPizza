@@ -14,13 +14,18 @@ model User{
   fullName String
   email String @unique
   password String
+  role UserRole @default(USER)
 
+  provider String?
+  providerId String?
 
+  orders Order[]
+  cart Cart?
+  verificationCode VerificationCode?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  cart Cart?
 }
 
 
@@ -111,3 +116,48 @@ model CartItem{
   updatedAt DateTime @updatedAt
 }
 
+model Order{
+  id Int @id @default(autoincrement())
+
+  user User? @relation(fields: [userId], references: [id])
+  userId Int?
+
+  token String
+
+  totalAmount Int
+  status OrderStatus
+  paymentId String?
+
+  items Json
+
+  fullName String
+  adress String
+  email String
+  address String
+  comment String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model VerificationCode{
+  id Int @id @default(autoincrement())
+
+  user User @relation(fields: [userId], references: [id])
+  userId Int @unique
+
+  code String
+  createdAt DateTime @default(now())
+}
+
+
+enum OrderStatus{
+  PENDING
+  SUCCEDED
+  CANCELLED
+}
+
+enum UserRole{
+  USER
+  ADMIN
+}
