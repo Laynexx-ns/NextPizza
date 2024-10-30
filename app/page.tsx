@@ -6,7 +6,7 @@ import {TopBar} from "@/components/shared/top-bar";
 export default function Home(){
   return(
       <>
-          <Container className="mt-10">
+          <Container className="mt-8">
               <Title text={'Все пиццы'} size={'lg'} className={'font-extrabold'}/>
           </Container>
           <TopBar/>
